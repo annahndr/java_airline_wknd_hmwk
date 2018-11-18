@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Flight {
@@ -6,9 +7,9 @@ public class Flight {
     private String flightNo;
     private String destination;
     private String departureAirport;
-    private String departureTime;
+    private LocalDate departureTime;
 
-    public Flight(String flightNo, String destination, String departureAirport, String departureTime) {
+    public Flight(String flightNo, String destination, String departureAirport, LocalDate departureTime) {
         this.flightNo = flightNo;
         this.destination = destination;
         this.departureAirport = departureAirport;
@@ -20,10 +21,15 @@ public class Flight {
         return this.passengers.size();
     }
 
+    public String getFlightNo() {
+        return flightNo;
+    }
 
     public void addPassenger(Passenger passenger, Plane plane) {
         if (plane.getPlaneCapacity() - this.getNoOfPassengers() >= 1) {
             this.passengers.add(passenger);
+            passenger.setPassengerFlightNo(this);
+//            passenger.setSeatNumber();
         }
     }
 

@@ -28,4 +28,10 @@ public class PlaneTest {
     public void canGetPlaneWeight() {
         assertEquals(100, plane1.getPlaneTotalWeight());
     }
+
+    @Test
+    public void canCalculateBaggageCapcity(){
+        assertEquals(150, plane2.getBaggageCapacity());
+    }
+
 }

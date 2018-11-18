@@ -19,4 +19,10 @@ public class Plane {
     public int getPlaneTotalWeight(){
         return this.planeType.getPlaneTotalWeight();
     }
+
+    //    how much weight does plane have for baggage?
+    public int getBaggageCapacity(){
+        return this.planeType.getPlaneTotalWeight() / 2;
+    }
+
 }
